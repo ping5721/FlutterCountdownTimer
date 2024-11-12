@@ -31,7 +31,7 @@ $ flutter pub get
 ## Example
 ### Simple to use
 ```dart
-int endTime = DateTime.now().millisecondsSinceEpoch + 1000 * 30;
+int endTime = clock.now().millisecondsSinceEpoch + 1000 * 30;
 
 ...
 CountdownTimer(
@@ -40,7 +40,7 @@ CountdownTimer(
 ```
 ### Execute event at end.
 ```dart
-int endTime = DateTime.now().millisecondsSinceEpoch + 1000 * 30;
+int endTime = clock.now().millisecondsSinceEpoch + 1000 * 30;
 
 void onEnd() {
   print('onEnd');
@@ -55,7 +55,7 @@ CountdownTimer(
 ### Use the controller to end the countdown early.
 ```dart
   CountdownTimerController controller;
-  int endTime = DateTime.now().millisecondsSinceEpoch + 1000 * 30;
+  int endTime = clock.now().millisecondsSinceEpoch + 1000 * 30;
 
   @override
   void initState() {
@@ -95,7 +95,7 @@ CountdownTimer(
 ```
 ### Custom style.
 ```dart
-  int endTime = DateTime.now().millisecondsSinceEpoch + 1000 * 30;
+  int endTime = clock.now().millisecondsSinceEpoch + 1000 * 30;
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +120,7 @@ CountdownTimer(
 class _CountdownTimerPageState extends State<CountdownTimerPage>
     with SingleTickerProviderStateMixin {
   late CountdownTimerController controller;
-  int endTime = DateTime.now().millisecondsSinceEpoch +
+  int endTime = clock.now().millisecondsSinceEpoch +
       Duration(seconds: 30).inMilliseconds;
 
   @override
@@ -187,7 +187,7 @@ class ListViewPage extends StatefulWidget {
 }
 
 class _ListViewPageState extends State<ListViewPage> {
-  int endTime = DateTime.now().millisecondsSinceEpoch + 1000 * 60 * 60;
+  int endTime = clock.now().millisecondsSinceEpoch + 1000 * 60 * 60;
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/index.dart';
 
@@ -75,7 +76,7 @@ class CountdownTimerController extends ChangeNotifier {
   ///Calculate current remaining time.
   CurrentRemainingTime? _calculateCurrentRemainingTime() {
     int remainingTimeStamp =
-        (_endTime - DateTime.now().millisecondsSinceEpoch) ~/ 1000;
+        (_endTime - clock.now().millisecondsSinceEpoch) ~/ 1000;
     if (remainingTimeStamp <= 0) {
       return null;
     }

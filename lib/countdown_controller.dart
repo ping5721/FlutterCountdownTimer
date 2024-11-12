@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/index.dart';
 
@@ -70,7 +71,7 @@ class CountdownController extends ValueNotifier<int> {
 
   _diffTime(Duration duration) {
     value = max(value - duration.inMilliseconds, 0);
-    _lastTimestamp = DateTime.now().millisecond;
+    _lastTimestamp = clock.now().millisecond;
     if (value <= 0) {
       stop();
       onEnd?.call();
@@ -81,7 +82,7 @@ class CountdownController extends ValueNotifier<int> {
   ///pause
   stop() {
     if (_lastTimestamp != null && value > 0) {
-      _lostTime = DateTime.now().millisecond - _lastTimestamp!;
+      _lostTime = clock.now().millisecond - _lastTimestamp!;
     }
     _dispose();
   }
